@@ -8,6 +8,8 @@
         <meta name="author" content="Luís Almeida">
         <meta name="viewport" content="width=device-width">
         <title>jQuery Unveil - A very lightweight plugin to lazy load images</title>
+        <script src="vendor/jquery/jquery.js"></script>
+        <script src="jquery.unveil.js"></script>
     </head>
 
     <style>
@@ -87,12 +89,14 @@
 
     </style>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="jquery.unveil.js"></script>
-
     <script>
+//    $(function() {
+//        $("li img").unveil(300);
+//    });
     $(function() {
-        $("li img").unveil(300);
+        $("li img").unveil(function() {
+            console.log('unveil triggered');
+        });
     });
     </script>
 

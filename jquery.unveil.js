@@ -10,7 +10,17 @@
 
 ;(function($) {
 
-  $.fn.unveil = function(threshold, callback) {
+  $.fn.unveil = function() {
+    var threshold,
+        callback;
+
+    if (typeof arguments[0] == 'number')
+      threshold = arguments[0];
+
+    if (typeof arguments[0] == 'function')
+      callback = arguments[0];
+    else if (typeof arguments[1] == 'function')
+      callback == arguments[1];
 
     var $w = $(window),
         th = threshold || 0,
